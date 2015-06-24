@@ -21,7 +21,7 @@ gulp.task('html',function(){
 
 //js
 gulp.task('js', function() {
-    gulp.src('./lib/js/**/*.js')
+    gulp.src('./js/**/*.js')
         .pipe(connect.reload());
 });
 
@@ -56,4 +56,4 @@ gulp.task('watch', function () {
 
 
 
-gulp.task('default', ['server', 'html', 'build-static', 'watch']);
+gulp.task('default', ['server', 'html', 'js', 'watch']);
