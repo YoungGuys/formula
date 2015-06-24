@@ -33,7 +33,7 @@ function rezerv (ion, death, N, C, NP, k, m, x, t) {
 /*
 	9.2.	Расчет резерва бонусов
  */
-function bonus_reserv (I, D, t, T, Bonus) {
+function bonus_reserv (I, D, t, BT, Bonus) {
 	var VBonus_SOTY1 = [];
 	var VBonus_EOTY1 = [];
 
@@ -46,7 +46,7 @@ function bonus_reserv (I, D, t, T, Bonus) {
 		VBonus_SOTY1[t] += Bonus;
 	}
 
-	VBonus_SOTY1[t] *= B * T[t] ^ Bonus;
+	VBonus_SOTY1[t] *= BT[t] ^ Bonus;
 
 }
 
