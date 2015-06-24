@@ -3,8 +3,12 @@
 Cx = 4070052;
 index = 20;
 
-function BT () {
+function BT (NT, f) {
 	return NT / (1 - f);
+}
+
+function S (BP, BT) {
+	return BP / BT;
 }
 /*
 	9.1.	Расчет обычного резерва
@@ -12,13 +16,13 @@ function BT () {
  	C, N, P, k = array
  	x, t, m = number
  */
-function rezerv (ion, death, C, N, P, k, m, x, t) {
+function rezerv (ion, death, N, C, NP, k, m, x, t) {
 	var a = ( C[x + 1] - C[x + k] - ((m - 1) / 2 * m) / ( N[[x + 1] - N[x + k]]) )
 
-	var v = N * P[ion + death] / m * (1 + y) - y * N * P[ion + death] *
+	var v = NP[ion + death] / m * (1 + y) - y * NP[ion + death] *
 		( a / N[x] );
 
-	var Vgeneral_SOTY = (1 + y) * N * P[ion - death] / m + Vgeneral_EOTY;
+	var Vgeneral_SOTY = (1 + y) * NP[ion - death] / m + Vgeneral_EOTY;
 
 	var Vgeneral_EOTY = S ( (R[x + t] - R[x + k]) * sigma + N[x + k] ) / N[x + t]
 					  - (1 + y) * N * P[ion + death] * a / N[x + t];
@@ -71,8 +75,8 @@ function bruttoTarif () {
 }
 
 // 9.6.	Расчет бонуса по году
-function bonus () {
-	return I * D[t] / B * (T[t] ^ Bonus); 
+function bonus (ID, BT, Bonus) {
+	return ID[t] / (BT[t] ^ Bonus);
 }
 
 // 9.7 Расчет страховой суммы с учетом бонусов
