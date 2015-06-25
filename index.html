@@ -6,10 +6,45 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width">
 
-	<script src="js/script.js"></script>
-	<script src="js/app.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+    <script src="js/script.js"></script>
+	<!--<script src="js/app.js"></script>-->
 </head>
-<body>
+<body ng-app="app">
+    <div ng-controller="formCtrl">
+        Возраст:
+        <input type="number"
+               ng-model="x"
+               ng-change="summ()"
+                />
+        Срок действия договора:
+        <input type="number"
+               ng-model="k"
+               ng-change="summ()"
+                />
+        Количество оплаты в год
+        <input type="number"
+               ng-model="m"
+               ng-change="summ()"
+                />
+        Страховая сумма:
+        <input type="number"
+               ng-model="s"
+               ng-change="summ()"
+                />
+        <p></p>
+        <hr>
+        Страховая сумма - <p>{{sum}}</p>
+        Премия - <p>{{BPdeath}}</p>
+        Тариф по дожитию - <p>{{BTlongevity}}</p>
+        Тариф по смерти - <p>{{BTdeath}}</p>
+        Бонусы по каждому году
+
+
+        <ul id="el">
+            {{lishka}}
+        </ul>
+    </div>
 
 </body>
 </html>

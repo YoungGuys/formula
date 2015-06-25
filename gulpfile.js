@@ -1,7 +1,6 @@
 var   gulp         = require('gulp')
     , notify       = require("gulp-notify")
     , connect      = require('gulp-connect')
-    , concat       = require('gulp-concat')
     ;
 
 //server

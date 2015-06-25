@@ -1,4 +1,10 @@
+var app = angular.module('app',[]);
 
+app.controller('formCtrl', ['$scope', function ($scope) {
+     $scope.summ = function () {
+         $scope.result = $scope.s + 2;
+     }
+}]);
 
 Cx = 4070052;
 index = 20;
